@@ -1,33 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #333333;
+  background-color: #f2eeeb;
+  font-family: "Poppins", sans-serif;
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+.timerbg {
+  background-color: #fabebe;
+  fill: #fabebe;
+}
+
+.timertext {
+  color: #df5858;
+  fill: #df5858;
+}
+
+.btnColor {
+  background-color: #333333;
+  color: #f2eeeb;
+}
+
+.btnResetColor {
+  background-color: #e4dfde;
+}
+
+.iconColor {
+  fill: #333333;
+}
+
+.barColor {
+  background-color: #df5858;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* darktheme */
+body.darktheme {
+  @apply bg-black text-white-smoke;
+}
+
+.darktheme {
+  background-color: #333333;
+}
+
+.darktheme .btnColor {
+  background-color: #df5858;
+  color: #fabebe;
+}
+
+.darktheme .btnResetColor {
+  background-color: #515151;
+}
+
+.darktheme .iconColor {
+  fill: #f2eeeb;
+}
+
+.darktheme .timerbg {
+  background-color: #df5858;
+  fill: #df5858;
+}
+
+.darktheme .timertext {
+  color: #fabebe;
+  fill: #fabebe;
+}
+
+.darktheme .barColor {
+  background-color: #df5858;
+}
+/* Add other theme-related styles */
+
+/* pink theme */
+body.pinktheme {
+  @apply bg-white-smoke text-black;
+}
+
+.pinktheme {
+  background-color: #ff4689;
+}
+
+.pinktheme .btnColor {
+  background-color: #ff4689;
+  color: #f2eeeb;
+}
+
+.pinktheme .btnResetColor {
+  background-color: #e4dfde;
+}
+
+.pinktheme .iconColor {
+  fill: #333333;
+}
+
+.pinktheme .timerbg {
+  background-color: #ffbcd4;
+  fill: #ffbcd4;
+}
+
+.pinktheme .timertext {
+  color: #ff4689;
+  fill: #ff4689;
+}
+
+.pinktheme .barColor {
+  background-color: #ff4689;
+}
+
+/* green theme */
+body.greentheme {
+  @apply bg-white-smoke text-black;
+}
+
+.greentheme {
+  background-color: #48a684;
+}
+
+.greentheme .btnColor {
+  background-color: #48a684;
+  color: #f2eeeb;
+}
+
+.greentheme .btnResetColor {
+  background-color: #e4dfde;
+}
+
+.greentheme .iconColor {
+  fill: #333333;
+}
+
+.greentheme .timerbg {
+  background-color: #bcd0c9;
+  fill: #bcd0c9;
+}
+
+.greentheme .timertext {
+  color: #48a684;
+  fill: #48a684;
+}
+
+.greentheme .barColor {
+  background-color: #48a684;
+}
+
+/* blue theme */
+body.bluetheme {
+  @apply bg-white-smoke text-black;
+}
+
+.bluetheme {
+  background-color: #49759f;
+}
+
+.bluetheme .btnColor {
+  background-color: #49759f;
+  color: #f2eeeb;
+}
+
+.bluetheme .btnResetColor {
+  background-color: #e4dfde;
+}
+
+.bluetheme .iconColor {
+  fill: #333333;
+}
+
+.bluetheme .timerbg {
+  background-color: #cfd8e0;
+  fill: #cfd8e0;
+}
+
+.bluetheme .timertext {
+  color: #49759f;
+  fill: #49759f;
+}
+
+.bluetheme .barColor {
+  background-color: #49759f;
 }
