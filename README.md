@@ -1,3 +1,21 @@
+# Coinodoro: A Gamified Pomodoro App
+
+![Coinodoro](https://github.com/sarahdewitt/coinodoro/raw/main/public/readme-cover.jpg)
+
+Coinodoro is a gamified Pomodoro timer designed to boost your productivity and keep you motivated. Track your work sessions, earn coins, and unlock color themes as you progress!
+
+## Features
+
+- Pomodoro timer
+- Earn Coins to access various color themes
+- Track your progress with a personalised report
+
+## Demo
+
+Check out the live demo [here](https://coinodoro.vercel.app/)
+
+## Usage
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
