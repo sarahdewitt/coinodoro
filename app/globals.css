@@ -49,6 +49,10 @@ body {
   background-color: #df5858;
 }
 
+.dialogbg {
+  background-color: #f2eeeb;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
