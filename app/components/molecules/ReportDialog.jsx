@@ -27,7 +27,7 @@ export default function ReportDialog() {
                 <TitleHeader
                   title={"Report"}
                   subtitle={
-                    "Acitivity summary of your focus hours here at pomodropo"
+                    "Acitivity summary of your focus hours here at coinodoro"
                   }
                 />
                 <div className="px-5">
