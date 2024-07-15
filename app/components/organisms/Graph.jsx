@@ -95,7 +95,7 @@ const CompletionGraph = () => {
       <Bar
         data={data}
         options={options}
-        className="text-sm md:text-base h-screen"
+        className="text-sm md:text-base h-5/6"
       />
     </div>
   );

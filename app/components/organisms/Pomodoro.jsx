@@ -4,7 +4,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import Timer from "../atoms/Timer";
 import ButtonGroup from "../molecules/ButtonGroup";
 import useTimer from "../../hooks/useTimer";
-import { Nav } from "../molecules/Nav";
+import { Nav } from "./Nav";
 import Mode from "../atoms/Mode";
 
 const WORK_DURATION = 1500;
@@ -15,21 +15,11 @@ const COINS_REWARD = 100;
 
 export default function Pomodoro() {
   const { mode, coins, startTimer, resetTimer, minutes, seconds } = useTimer();
-
-  const getColor = (mode) => {
-    if (mode === "work") {
-      return "#DF5858";
-    } else if (mode === "shortBreak" || mode === "longBreak") {
-      return "#E4CC5A";
-    } else {
-      return "#DF5858";
-    }
-  };
   return (
     <section className="h-screen">
       <Nav coins={coins} />
-      <div className="flex flex-col items-center gap-10 h-5/6 justify-center">
-        <Mode color={getColor(mode)}>
+      <div className="flex flex-col items-center gap-10 h-5/6 justify-center my-10">
+        <Mode>
           {mode === "work"
             ? "Work"
             : mode === "shortBreak"

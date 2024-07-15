@@ -1,27 +1,26 @@
 import { useState, useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import { useTheme } from "./useTheme";
 
-const WORK_DURATION = 1500;
-const SHORT_BREAK_DURATION = 300; // 5 minutes
+const WORK_DURATION = 5; //1500
+const SHORT_BREAK_DURATION = 5; // 300 secs 5 minutes
 const LONG_BREAK_DURATION = 900; // 15 minutes
 const POMODORO_CYCLE = 4; // Number of work sessions before a long break
 const COINS_REWARD = 100;
 
 export default function useTimer() {
+  const { coins, updateCoins } = useTheme(); // Get updateCoins from useTheme
   const [timeLeft, setTimeLeft] = useState(WORK_DURATION);
   const [isActive, setIsActive] = useState(false);
   const [mode, setMode] = useState("work"); //work, shortBreak, longBreak
   const [cycles, setCycles] = useState(0);
-  const [coins, setCoins] = useLocalStorage("coins", 0);
   const [isHandlingComplete, setIsHandlingComplete] = useState(false);
 
   const alarm = new Audio("audio/alarm.mp3");
 
   useEffect(() => {
     let interval = null;
-    //if the timer is active and there is remaining time
     if (isActive && timeLeft > 0 && !isHandlingComplete) {
-      //decrease timeleft by 1
       interval = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
@@ -29,7 +28,6 @@ export default function useTimer() {
       handleComplete();
       clearInterval(interval);
     }
-    //cleanup function
     return () => clearInterval(interval);
   }, [isActive, timeLeft, isHandlingComplete]);
 
@@ -37,7 +35,7 @@ export default function useTimer() {
     setIsHandlingComplete(true);
     alarm.play();
 
-    const completionDate = new Date().toISOString().split("T")[0]; // Get the date in YYYY-MM-DD format
+    const completionDate = new Date().toISOString().split("T")[0];
     let completionLog = JSON.parse(localStorage.getItem("completionLog")) || {};
 
     if (completionLog[completionDate]) {
@@ -53,7 +51,7 @@ export default function useTimer() {
         setCycles((prevCycles) => {
           const newCycles = prevCycles + 1;
           const newCoins = coins + COINS_REWARD;
-          setCoins(newCoins);
+          updateCoins(newCoins); // Call updateCoins to synchronize coins
 
           if (newCycles === POMODORO_CYCLE) {
             setMode("longBreak");
@@ -87,7 +85,7 @@ export default function useTimer() {
 
   return {
     mode,
-    coins,
+    coins, // Expose coins so it can be displayed in the Nav component
     startTimer,
     resetTimer,
     minutes,

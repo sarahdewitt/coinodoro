@@ -10,6 +10,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.borderColor{
+  border-color: #e4dfde
+}
+
 .tooltip {
   @apply invisible absolute;
 }
@@ -51,12 +55,70 @@ body {
   }
 }
 
+/* light theme */
+body.lighttheme {
+  color: #333333;
+  background-color: #f2eeeb;
+  font-family: "Poppins", sans-serif;
+}
+
+.lighttheme {
+  background-color: #f2eeeb;
+}
+
+.lighttheme .dialogbg {
+  background-color: #f2eeeb;
+}
+
+.lighttheme .tooltip {
+  @apply invisible absolute;
+}
+
+.lighttheme .has-tooltip:hover .lighttheme .tooltip {
+  @apply visible z-50;
+}
+
+.lighttheme .timerbg {
+  background-color: #fabebe;
+  fill: #fabebe;
+}
+
+.lighttheme .timertext {
+  color: #df5858;
+  fill: #df5858;
+}
+
+.lighttheme .btnColor {
+  background-color: #333333;
+  color: #f2eeeb;
+}
+
+.lighttheme .btnResetColor {
+  background-color: #e4dfde;
+}
+
+.lighttheme .iconColor {
+  fill: #333333;
+}
+
+.lighttheme .barColor {
+  background-color: #df5858;
+}
+
 /* darktheme */
 body.darktheme {
   @apply bg-black text-white-smoke;
 }
 
 .darktheme {
+  background-color: #333333;
+}
+
+.darktheme .borderColor {
+  border-color: #515151;
+}
+
+.darktheme .dialogbg {
   background-color: #333333;
 }
 
@@ -97,6 +159,10 @@ body.pinktheme {
   background-color: #ff4689;
 }
 
+.pinktheme .dialogbg {
+  background-color: #f2eeeb;
+}
+
 .pinktheme .btnColor {
   background-color: #ff4689;
   color: #f2eeeb;
@@ -133,6 +199,10 @@ body.greentheme {
   background-color: #48a684;
 }
 
+.greentheme .dialogbg {
+  background-color: #f2eeeb;
+}
+
 .greentheme .btnColor {
   background-color: #48a684;
   color: #f2eeeb;
@@ -167,6 +237,10 @@ body.bluetheme {
 
 .bluetheme {
   background-color: #49759f;
+}
+
+.bluetheme .dialogbg {
+  background-color: #f2eeeb;
 }
 
 .bluetheme .btnColor {
