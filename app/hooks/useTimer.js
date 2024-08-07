@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { useTheme } from "./useTheme";
 
-const WORK_DURATION = 5; //1500
-const SHORT_BREAK_DURATION = 5; // 300 secs 5 minutes
+const WORK_DURATION = 1500; //1500
+const SHORT_BREAK_DURATION = 300; // 300 secs 5 minutes
 const LONG_BREAK_DURATION = 900; // 15 minutes
 const POMODORO_CYCLE = 4; // Number of work sessions before a long break
 const COINS_REWARD = 100;
